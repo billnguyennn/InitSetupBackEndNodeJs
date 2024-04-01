@@ -1,8 +1,5 @@
-import { getEnv, getEnvF } from "./config";
+import { getEnv } from "./config";
 import { startServer } from "./server";
 
-async function main() {
-    await startServer(parseInt(getEnv('SERVER_PORT')));
-}
+startServer(parseInt(getEnv('SERVER_PORT')));
 
-main();

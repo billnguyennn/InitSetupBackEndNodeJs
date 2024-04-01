@@ -1,20 +1,22 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.getEnvF = exports.getEnv = exports.isDev = void 0;
 require('dotenv').config();
-
-export const isDev = () => process.env.NODE_ENV === 'dev';
-
-export function getEnv(key: string): string {
+const isDev = () => process.env.NODE_ENV === 'dev';
+exports.isDev = isDev;
+function getEnv(key) {
     const val = process.env[key];
-
     if (!val) {
         throw new Error(`Environment variable ${key} is not set`);
     }
     return val;
 }
-
-export function getEnvF(key: string): string {
+exports.getEnv = getEnv;
+function getEnvF(key) {
     const value = process.env[key];
     if (!value) {
         throw new Error(`Missing environment variable ${key}`);
     }
     return value;
 }
+exports.getEnvF = getEnvF;

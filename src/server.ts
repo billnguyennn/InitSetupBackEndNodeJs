@@ -24,7 +24,6 @@ export async function startServer(port: number){
         console.log(`Server is listening on port ${port}`);
     });
 }
-require('dotenv').config();
 
 process.on('uncaughtException', function(err){
     console.log(err);
